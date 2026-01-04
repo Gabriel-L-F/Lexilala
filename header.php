@@ -29,26 +29,22 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="site-branding">
-				<?php
-				// Display custom logo if set.
-				if ( has_custom_logo() ) :
-					the_custom_logo();
-				else :
-					?>
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</h1>
-					<?php
-					$wp_b2_description = get_bloginfo( 'description', 'display' );
-					if ( $wp_b2_description || is_customize_preview() ) :
-						?>
-						<p class="site-description"><?php echo $wp_b2_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-						<?php
-					endif;
-				endif;
-				?>
+				<div class="logo_header">
+					<img src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
+				</div>
+				<div class="nav-bar">
+					<li><a href="#">Les mots de l'école</a></li>
+					<li><a href="#">Qui sommes-nous ?</a></li>
+					<li><a href="#">Mode d'emploi</a></li>
+					<li><a href="#">Ressources</a></li>
+					<li class="dropdown">
+				</div>
+				<button class="lang-select">
+                    Français 
+                    <span class="arrow-down"><img src="<?php echo get_template_directory_uri(); ?>/image/fleche_menu.png" alt="menu header"></span>
+                </button>
+            </li>
+        </ul>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">
@@ -68,6 +64,6 @@
 					)
 				);
 				?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .container -->
-	</header><!-- #masthead -->
+			</nav>
+		</div>
+	</header>

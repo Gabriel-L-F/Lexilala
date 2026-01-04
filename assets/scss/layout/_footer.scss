@@ -5,35 +5,54 @@
 @use '../abstracts' as *;
 
 .site-footer {
-	padding: spacing('xl') 0;
-	margin-top: spacing('xxl');
-	background-color: color('bg-alt');
-	border-top: 1px solid color('border');
-}
-
-.footer-widgets {
-	margin-bottom: spacing('lg');
-}
-
-.site-info {
-	text-align: center;
-
-	.footer-navigation {
-		margin-bottom: spacing('md');
-
-		.footer-menu {
-			display: flex;
-			justify-content: center;
-			gap: spacing('md');
-			list-style: none;
-			padding: 0;
-			margin: 0;
+	height: 479px;
+	background-color: color('fond_footer');
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	.footer-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		justify-content: space-between;
+		margin:0 202px;
+		.footer-column{
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			a {
+				color: black; /* Définit la couleur du texte du lien en noir */
+				text-decoration: none;
+			}
+		}
+		.logo {
+			width: 245px;
+			height: 90px;
+			margin: 5px;
+		}
+		.mission-statement {
+			width: 417px;
+		}
+		.sitemap{
+			margin-top:29px;
 		}
 	}
-
-	.copyright {
-		margin: 0;
-		font-size: font-size('small');
-		color: color('text-light');
+	.footer-bottom {
+		margin-top: auto;
+		display: flex;
+		justify-content: space-between;
+		width: 50%;
+		margin-left: auto;
+  		margin-right: auto;
+		margin-bottom: 5px;
+		span {
+			a {
+				color: black; /* Définit la couleur du texte du lien en noir */
+				text-decoration: none;
+			}
+		}
 	}
 }
+

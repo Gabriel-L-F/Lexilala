@@ -8,7 +8,7 @@
   align-items: center; // centre horizontalement
   gap: 2rem;
 
-  .search-title{
+  .title{
     width: 775px;
     font-weight: 700px;
     font-size: 50px;
@@ -84,83 +84,5 @@
   }
 }
 .form-head{
-  margin:107px 15% 38px 15%;
-  gap:35px;
-
-  .description{
-    width: 686px;
-  }
-}
-.add-word{
-  margin:0 15% 0 15%;
-  background-color: #8C9839;
-  border-radius: 15px;
-  height: 685px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 133px 0 89px;
-  color: white;
-  justify-content: space-between;
-
-    .form-title{
-      align-self: center;
-      font-size: 36px;
-      color: white;
-      margin-top: 23px;
-    }
-
-    .in-row{
-      display: flex;
-      flex-direction: row;
-
-    .language-peaker{
-      margin-right: 78px;
-    }
-    .condition{
-      margin-left: 37px;
-      padding-top: 7px;
-      align-self: center;
-      justify-content: center;
-    }
-
-
-    .checkbox{
-      width: 50px;
-      height: auto;
-      border:none;
-      border-radius: 10%;
-    }
-}
-    .send{
-      margin:7% 0 44px 0 ;
-      border-radius: 20px;
-      border: none;
-      width: 186px;
-      height: 50px;
-      align-self: center;
-      color: #8C9839;
-    }
-}
-.soutient {
-  margin:100px 15%;
-  background-color: #8C9839;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 63px 133px 63px 89px;
-  color: white;
-  justify-content: space-between;
-  height: 244px;
-
-  .greetings {
-    align-self: center;
-  }
-  .subscribe{
-    border-radius: 20px;
-    border: none;
-    width: 186px;
-    height: 50px;
-    align-self: center;
-    color:#8C9839;
-  }
+  margin:288px;
 }

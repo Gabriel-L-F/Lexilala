@@ -4,9 +4,11 @@
 
 @use '../abstracts' as *;
 
+
+
 .site-header {
 	padding: spacing('lg') 0;
-	background-color: color('white');
+	background-color: color('aqua');
 	border-bottom: 1px solid color('border');
 
 	.container {
@@ -15,35 +17,47 @@
 }
 
 .site-branding {
-	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center ;
+	.logo_header {
+		margin: 10px;
+	}
+	img {
+		width: 247px;
+		height: auto;
+	}
+	.nav-bar{
+		display: flex;
+		gap: 25px;
+		width: 792px;
+		justify-content: space-between;
+	}
+	li {
+		list-style: none ;
+		
+	}
+	a {
+	color: black; /* Définit la couleur du texte du lien en noir */
+    text-decoration: none;
+	font-size: 20px;
+	}
 
-	.site-title {
-		margin: 0;
-		font-size: font-size('h3');
-
-		a {
-			@include link-reset;
-			color: color('text');
-
-			&:hover,
-			&:focus {
-				color: color('primary');
+	.lang-select{
+		display: flex;
+		background-color: transparent;
+		color: color('black') ;
+		border: 2px solid color('button_header');
+		gap: 5px;
+		.arrow-down{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				width:16px;
+				height: auto;
 			}
 		}
 	}
 
-	.site-description {
-		margin: 0;
-		font-size: font-size('small');
-		color: color('text-light');
-	}
-
-	.custom-logo-link {
-		display: block;
-	}
-
-	.custom-logo {
-		max-height: 60px;
-		width: auto;
-	}
 }

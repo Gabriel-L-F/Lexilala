@@ -125,3 +125,21 @@ if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 if ( class_exists( 'ACF' ) ) {
 	require_once WP_B2_THEME_DIR . '/inc/acf-config.php';
 }
+function enqueue_header_styles() {
+    wp_enqueue_style('header-style', get_template_directory_uri() . '/header.css', array(), '1.0');
+}
+add_action('wp_enqueue_scripts', 'enqueue_header_styles');
+/**
+ * Enqueue About page styles
+ */
+function wp_b2_enqueue_about_style() {
+    if ( is_page('about') ) {
+        wp_enqueue_style(
+            'wp-b2-about',
+            WP_B2_THEME_URI . '/assets/css/about.css',
+            array('wp-b2-main'),
+            filemtime( WP_B2_THEME_DIR . '/assets/css/about.css' )
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'wp_b2_enqueue_about_style' );

@@ -10,47 +10,41 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="container">
-			<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-				<aside class="footer-widgets">
-					<?php dynamic_sidebar( 'footer-1' ); ?>
-				</aside>
-			<?php endif; ?>
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-column footer-mission">
+            <div class="logo">
+				<img src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
+            </div>
+            <p class="mission-statement">
+                Faciliter la communication entre l'école et toutes les familles, quelles que soient leurs langues.
+            </p>
+        </div>
 
-			<div class="site-info">
-				<?php
-				// Display footer navigation menu if set.
-				if ( has_nav_menu( 'footer' ) ) :
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'footer',
-							'menu_id'         => 'footer-menu',
-							'menu_class'      => 'footer-menu',
-							'container'       => 'nav',
-							'container_class' => 'footer-navigation',
-							'depth'           => 1,
-						)
-					);
-				endif;
-				?>
+        <div class="footer-column footer-sitemap">
+            <h3 class="sitemap">Sitemap</h3>
+            <ul>
+                <li><a href="#">Les mots de l'école</a></li>
+                <li><a href="#">Qui sommes-nous ?</a></li>
+                <li><a href="#">Mode d'emploi</a></li>
+                <li><a href="#">Ressources</a></li>
+            </ul>
+        </div>
 
-				<p class="copyright">
-					<?php
-					printf(
-						/* translators: 1: Year, 2: Site name */
-						esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'wp-b2' ),
-						esc_html( gmdate( 'Y' ) ),
-						esc_html( get_bloginfo( 'name' ) )
-					);
-					?>
-				</p>
-			</div><!-- .site-info -->
-		</div><!-- .container -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+        <div class="footer-column footer-social">
+            <h3>Social</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
 
-<?php wp_footer(); ?>
-
-</body>
-</html>
+    <div class="footer-bottom">
+        <span class="legal-link"><a href="#">Mentions légales</a></span>
+        <span class="legal-link"><a href="#">Newsletter</a></span>
+        <span class="copyright">&copy; 2025 Lexilala</span>
+        <span class="legal-link"><a href="#">Politique de confidentialité</a></span>
+    </div>
+</footer>

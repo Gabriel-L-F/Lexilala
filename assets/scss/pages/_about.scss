@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+main {
+    margin:200px;
+}
+.logo {
+    width: 416px;
+    height: 155px;
+}
+
+.logo-dulala {
+    display: flex;
+}
+
+.logo-parteners{
+    display: flex;
+}
+
+.logo-thanks{
+    display: flex;
+}
