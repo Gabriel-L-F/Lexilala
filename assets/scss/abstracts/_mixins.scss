@@ -154,3 +154,56 @@
 		text-decoration: none;
 	}
 }
+// -----------------------------------------------------------------------------
+// button form
+// -----------------------------------------------------------------------------
+
+@mixin button-form {
+	border-radius: 20px;
+      border: none;
+      width: 186px;
+      height: 50px;
+      align-self: center;
+      color: color('primary');
+      background-color: color('white');
+}
+
+// Flex container
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Size helper
+@mixin size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+// Pill button / input
+@mixin pill($bg: #e0e0e0, $radius: 999px, $padding: 16px, $color: #000) {
+  background-color: $bg;
+  border-radius: $radius;
+  padding: $padding;
+  color: $color;
+  border: none;
+  outline: none;
+}
+
+// Circle / round element
+@mixin circle($size: 50px, $bg: #D9D9D9) {
+  @include size($size, $size);
+  border-radius: 100%;
+  background-color: $bg;
+  border: none;
+}
+
+// Card / container with padding and bg
+@mixin card($bg, $radius: 15px, $padding: 20px) {
+  background-color: $bg;
+  border-radius: $radius;
+  padding: $padding;
+}

@@ -48,10 +48,12 @@
 		color: color('black') ;
 		border: 2px solid color('button_header');
 		gap: 5px;
+		width: 100px;
 		.arrow-down{
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			
 			img {
 				width:16px;
 				height: auto;

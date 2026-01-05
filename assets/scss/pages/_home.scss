@@ -1,28 +1,25 @@
-
 @use '../abstracts' as *;
 
-.search-wrapper {
-  margin-top: 86px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; // centre horizontalement
-  gap: 2rem;
 
-  .search-title{
+.search-wrapper {
+  margin-top:2%;
+  @include flex(column, center, center, 2rem);
+
+  .search-title {
     width: 775px;
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 50px;
   }
 
   .search-bar {
-    display: flex;
+    @include flex(row, flex-start, center);
     margin-bottom: 108px;
 
-    .search-bar-content{
+    .search-bar-content {
       position: relative;
       width: 863px;
 
-      .icon-search  {
+      .icon-search {
         position: absolute;
         right: 18px;
         top: 50%;
@@ -31,147 +28,114 @@
         background: transparent;
         border: none;
 
-        .loupe-recherche{
-          width: 41px;
-          height: auto;
+        .loupe-recherche {
+          @include size(41px, auto);
         }
       }
     }
-      .search-bar-content input{
-        width: 863px;
-        padding: 16px 50px 16px 20px;
-        border-radius: 999px; /* forme pillule */
-        border: none;
-        background-color: #e0e0e0;
-        font-size: 16px;
-        outline: none;
-    }
-    .search-bar-content input::placeholder {
-      color: #777;
-    }
-    .filter {
-      border:none;
-      border-radius: 100%;
-      width: 56px;
-      height: auto;
-      margin-left: 29px;
-      background-color: #D9D9D9;
 
+    .search-bar-content input {
+      @include pill(#e0e0e0);
+      width: 863px;
+      font-size: 16px;
+
+      &::placeholder {
+        color: #777;
+      }
+    }
+
+    .filter {
+      @include circle(56px, #D9D9D9);
+      margin-left: 29px;
     }
   }
 }
-  
-.info{
-  background-color: #F5F5F5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
 
-    .info-content{
-      width: 100%;
-      margin: 40px;
-      font-size: 20px;
-    }
+.info {
+  @include flex(row, center, center);
+  width: 100%;
+  background-color: #F5F5F5;
+
+  .info-content {
+    width: 100%;
+    margin: 40px;
+    font-size: 20px;
+  }
 }
 
-.ilustration{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.ilustration {
+  @include flex(row, center, center);
 
   .ilustration-image {
-    width:864px;
-    height: 435px;
+    @include size(864px, 435px);
     margin: 40px;
   }
 }
 
-.form-head{
-  margin:107px 15% 38px 15%;
-  gap:35px;
+.form-head {
+  margin: 107px 15% 38px 15%;
+  @include flex(row, flex-start, stretch, 35px);
 
-  .description{
+  .description {
     width: 686px;
   }
 }
-.add-word{
-  margin:0 15% 0 15%;
-  background-color: color('primary');
-  border-radius: 15px;
+
+.add-word {
+  margin: 0 15%;
+  @include card(color('primary'), 15px, 0 133px 0 89px);
   height: 685px;
-  display: flex;
-  flex-direction: column;
-  padding: 0 133px 0 89px;
+  @include flex(column, space-between, stretch);
   color: white;
-  justify-content: space-between;
 
-    .form-title{
-      align-self: center;
-      font-size: 36px;
-      color: white;
-      margin-top: 23px;
-    }
+  .form-title {
+    align-self: center;
+    font-size: 36px;
+    color: white;
+    margin-top: 23px;
+  }
 
-    .in-row{
-      display: flex;
-      flex-direction: row;
+  .in-row {
+    @include flex(row, flex-start, center);
 
-    .language-peaker{
+    .language-peaker {
       margin-right: 78px;
     }
 
-    
-    .condition{
+    .condition {
       margin-left: 37px;
       padding-top: 7px;
       align-self: center;
       justify-content: center;
     }
 
-    .checkbox{
-      width: 50px;
-      height: auto;
-      border:none;
+    .checkbox {
+      margin-left: 25px;
+      transform: scale(4);
       border-radius: 10%;
-    }
-}
-    .send{
-      margin:7% 0 44px 0 ;
-      border-radius: 20px;
       border: none;
-      width: 186px;
-      height: 50px;
-      align-self: center;
-      color: color('primary');
-      background-color: #F5F5F5;
     }
+  }
 
-    .send:hover {
+  .send {
+    margin: 7% 0 44px 0;
+    @include button-form;
+  }
 
-    }
 }
+
 .soutient {
-  margin:100px 15%;
-  background-color: color('primary');
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 63px 133px 63px 89px;
-  color: color('white');
-  justify-content: space-between;
+  margin: 100px 15%;
+  @include card(color('primary'), 15px, 63px 133px 63px 89px);
+  @include flex(column, space-between, stretch);
   height: 244px;
+  color: color('white');
 
   .greetings {
     align-self: center;
   }
-  .subscribe{
-    border-radius: 20px;
-    border: none;
-    width: 186px;
-    height: 50px;
-    align-self: center;
-    color:color('primary');
-    background-color: color('white');
+
+  .subscribe {
+    @include button-form;
   }
 }

@@ -30,21 +30,23 @@
 		<div class="container">
 			<div class="site-branding">
 				<div class="logo_header" href="http://masterclass-wordpress.local/about/">
-					<a href="http://masterclass-wordpress.local">
+					<a href="http://lexilala.com">
 						<img src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
 					</a>
 				</div>
 				<div class="nav-bar">
-					<li><a href="http://lexilala.local">Les mots de l'école</a></li>
-					<li><a href="http://lexilala.local/about/">Qui sommes-nous ?</a></li>
+					<li><a href="#">Les mots de l'école</a></li>
+					<li><a href="http://lexilala.com/about/">Qui sommes-nous ?</a></li>
 					<li><a href="#">Mode d'emploi</a></li>
 					<li><a href="#">Ressources</a></li>
 					<li class="dropdown">
 				</div>
-				<button class="lang-select">
-                    Français 
-                    <span class="arrow-down"><img src="<?php echo get_template_directory_uri(); ?>/image/fleche_menu.png" alt="menu header"></span>
-                </button>
+				<select class="lang-select" name="lang-select" id="lang-select">
+						<option value="fr" selected>Français</option>
+						<option value="en">Anglais</option>
+						<option value="es">Espagnol</option>
+						<option value="de">Allemand</option>
+				</select>
             </li>
         </ul>
 			</div><!-- .site-branding -->
