@@ -62,27 +62,31 @@
 }
   
 .info{
-    background-color: #F5F5F5;
+  background-color: #F5F5F5;
   display: flex;
   align-items: center;
   justify-content: center;
- 
+  width: 100%;
+
     .info-content{
+      width: 100%;
       margin: 40px;
-      width: 686px;
       font-size: 20px;
     }
 }
+
 .ilustration{
   display: flex;
   justify-content: center;
   align-items: center;
+
   .ilustration-image {
     width:864px;
     height: 435px;
     margin: 40px;
   }
 }
+
 .form-head{
   margin:107px 15% 38px 15%;
   gap:35px;
@@ -93,7 +97,7 @@
 }
 .add-word{
   margin:0 15% 0 15%;
-  background-color: #8C9839;
+  background-color: color('primary');
   border-radius: 15px;
   height: 685px;
   display: flex;
@@ -116,13 +120,14 @@
     .language-peaker{
       margin-right: 78px;
     }
+
+    
     .condition{
       margin-left: 37px;
       padding-top: 7px;
       align-self: center;
       justify-content: center;
     }
-
 
     .checkbox{
       width: 50px;
@@ -138,17 +143,22 @@
       width: 186px;
       height: 50px;
       align-self: center;
-      color: #8C9839;
+      color: color('primary');
+      background-color: #F5F5F5;
+    }
+
+    .send:hover {
+
     }
 }
 .soutient {
   margin:100px 15%;
-  background-color: #8C9839;
+  background-color: color('primary');
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   padding: 63px 133px 63px 89px;
-  color: white;
+  color: color('white');
   justify-content: space-between;
   height: 244px;
 
@@ -161,6 +171,7 @@
     width: 186px;
     height: 50px;
     align-self: center;
-    color:#8C9839;
+    color:color('primary');
+    background-color: color('white');
   }
 }

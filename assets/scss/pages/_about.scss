@@ -4,8 +4,7 @@ main {
     margin:200px;
 }
 .logo {
-    width: 416px;
-    height: 155px;
+
 }
 
 .logo-dulala {
@@ -14,8 +13,15 @@ main {
 
 .logo-parteners{
     display: flex;
+    align-items: flex-start;
+    max-width: 350px;
+    margin: 10% 0 10% 15%;
+    gap:112px
 }
 
 .logo-thanks{
     display: flex;
+    align-items: flex-start;
+    max-width: 250px;
+    margin-top: 5%;
 }

@@ -132,14 +132,17 @@ add_action('wp_enqueue_scripts', 'enqueue_header_styles');
 /**
  * Enqueue About page styles
  */
-function wp_b2_enqueue_about_style() {
-    if ( is_page('about') ) {
-        wp_enqueue_style(
-            'wp-b2-about',
-            WP_B2_THEME_URI . '/assets/css/about.css',
-            array('wp-b2-main'),
-            filemtime( WP_B2_THEME_DIR . '/assets/css/about.css' )
-        );
-    }
+
+function theme_enqueue_styles() {
+
+    $about_css_path = get_template_directory() . '/assets/css/about.css';
+
+    wp_enqueue_style(
+        'about-css',
+        get_template_directory_uri() . '/assets/css/about.css',
+        [],
+        file_exists($about_css_path) ? filemtime($about_css_path) : null
+    );
 }
-add_action( 'wp_enqueue_scripts', 'wp_b2_enqueue_about_style' );
+
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');

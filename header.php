@@ -29,12 +29,14 @@
 	<header id="masthead" class="site-header">
 		<div class="container">
 			<div class="site-branding">
-				<div class="logo_header">
-					<img src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
+				<div class="logo_header" href="http://masterclass-wordpress.local/about/">
+					<a href="http://masterclass-wordpress.local">
+						<img src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
+					</a>
 				</div>
 				<div class="nav-bar">
-					<li><a href="#">Les mots de l'école</a></li>
-					<li><a href="#">Qui sommes-nous ?</a></li>
+					<li><a href="http://lexilala.local">Les mots de l'école</a></li>
+					<li><a href="http://lexilala.local/about/">Qui sommes-nous ?</a></li>
 					<li><a href="#">Mode d'emploi</a></li>
 					<li><a href="#">Ressources</a></li>
 					<li class="dropdown">
