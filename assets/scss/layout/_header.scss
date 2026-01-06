@@ -4,61 +4,160 @@
 
 @use '../abstracts' as *;
 
-
+/* ==================================================
+   BASE (MOBILE FIRST)
+================================================== */
 
 .site-header {
-	padding: spacing('lg') 0;
-	border-bottom: 1px solid color('border');
+  padding: spacing('md') 0;
+  border-bottom: 1px solid color('border');
 
-	.container {
-		@include flex-between;
-	}
+  .container {
+    @include flex(column, center, stretch);
+    gap: spacing('md');
+  }
 }
 
 .site-branding {
-	display: flex;
-	justify-content: center;
-	align-items: center ;
-	.logo_header {
-		margin: 10px;
-	}
-	img {
-		width: 247px;
-		height: auto;
-	}
-	.nav-bar{
-		display: flex;
-		gap: 25px;
-		width: 792px;
-		justify-content: space-between;
-	}
-	li {
-		list-style: none ;
-		
-	}
-	a {
-	color: black; /* Définit la couleur du texte du lien en noir */
-    text-decoration: none;
-	font-size: 20px;
-	}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative; 
 
-	.lang-select{
-		display: flex;
-		background-color: transparent;
-		color: color('black') ;
-		border: 2px solid color('button_header');
-		gap: 5px;
-		width: 100px;
-		.arrow-down{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			
-			img {
-				width:16px;
-				height: auto;
-			}
+  /* ================= BURGER ================= */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: color('black');
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+  }
+
+  /* ================= LOGO ================= */
+
+    .logo_header {
+		.logo {
+			width: 120px; 
+			height: auto;  
 		}
 	}
 
+  /* ================= NAV ================= */
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: spacing('sm');
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: color('white');
+    padding: spacing('md');
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+
+    &.active {
+      display: flex; 
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    color: color('black');
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  /* ================= LANG ================= */
+  .lang-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: fit-content;
+    padding: 6px 10px;
+    background-color: transparent;
+    border: 2px solid color('button_header');
+
+    .arrow-down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 14px;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* ==================================================
+   DESKTOP
+================================================== */
+@media (min-width: 768px) {
+
+  .site-header {
+    padding: spacing('lg') 0;
+
+    .container {
+      @include flex-between;
+      align-items: center;
+    }
+  }
+
+  .site-branding {
+    flex-direction: row;
+    justify-content: space-between;
+    position: static;
+
+  
+    .burger {
+      display: none;
+    }
+	
+	.logo_header {
+		.logo {
+			width: 247px !important;
+			height: auto !important;
+			padding-bottom: 20px;
+		}
+	}
+
+    .nav-bar {
+      display: flex; 
+      flex-direction: row;
+      justify-content: space-between;
+      width: auto;
+      gap: 25px;
+      position: static;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    a {
+      font-size: 20px;
+    }
+
+    .lang-select {
+      width: 100px;
+    }
+  }
 }

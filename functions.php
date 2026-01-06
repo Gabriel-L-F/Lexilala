@@ -146,3 +146,15 @@ function theme_enqueue_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+function lexilala_enqueue_scripts() {
+    // Ton JS burger
+    wp_enqueue_script(
+        'burger-menu', // handle
+        get_template_directory_uri() . '/assets/js/burger.js', // chemin vers ton fichier
+        array(), // dépendances, ici aucune
+        filemtime(get_template_directory() . '/assets/js/burger.js'), // version basée sur date de modification
+        true // mettre dans le footer
+    );
+}
+add_action('wp_enqueue_scripts', 'lexilala_enqueue_scripts');

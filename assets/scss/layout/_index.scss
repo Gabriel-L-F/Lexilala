@@ -1,28 +1,29 @@
-
 @use '../abstracts' as *;
 
 .search-wrapper {
   margin-top: 86px;
   display: flex;
   flex-direction: column;
-  align-items: center; // centre horizontalement
+  align-items: center;
   gap: 2rem;
 
-  .title{
+  /* TITRE */
+  .search-title {
     width: 775px;
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 50px;
+    display: none ;
   }
 
   .search-bar {
     display: flex;
     margin-bottom: 108px;
 
-    .search-bar-content{
+    .search-bar-content {
       position: relative;
       width: 863px;
 
-      .icon-search  {
+      .icon-search {
         position: absolute;
         right: 18px;
         top: 50%;
@@ -31,58 +32,102 @@
         background: transparent;
         border: none;
 
-        .loupe-recherche{
+        .loupe-recherche {
           width: 41px;
           height: auto;
         }
       }
     }
-      .search-bar-content input{
-        width: 863px;
-        padding: 16px 50px 16px 20px;
-        border-radius: 999px; /* forme pillule */
-        border: none;
-        background-color: #e0e0e0;
-        font-size: 16px;
-        outline: none;
+
+    .search-bar-content input {
+      width: 863px;
+      padding: 16px 50px 16px 20px;
+      border-radius: 999px;
+      border: none;
+      background-color: #e0e0e0;
+      font-size: 16px;
+      outline: none;
     }
+
     .search-bar-content input::placeholder {
       color: #777;
     }
+
     .filter {
-      border:none;
+      border: none;
       border-radius: 100%;
       width: 56px;
       height: auto;
       margin-left: 29px;
       background-color: #D9D9D9;
-
     }
   }
 }
-  
-.info{
-    background-color: #F5F5F5;
+
+.info {
+  background-color: #F5F5F5;
   display: flex;
   align-items: center;
   justify-content: center;
- 
-    .info-content{
-      margin: 40px;
-      width: 686px;
-      font-size: 20px;
-    }
+
+  .info-content {
+    margin: 40px;
+    width: 686px;
+    font-size: 20px;
+  }
 }
-.ilustration{
+
+.ilustration {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .ilustration-image {
-    width:864px;
+    width: 864px;
     height: 435px;
     margin: 40px;
   }
 }
-.form-head{
-  margin:288px;
+
+.form-head {
+  margin: 288px;
+}
+
+/* ==================================================
+   DESKTOP : affichage du titre
+================================================== */
+
+@media (min-width: 768px) {
+  .search-bar {
+    display: flex !important;       // assure que c’est bien flex
+    flex-direction: row !important; // horizontal
+    justify-content: space-between; // barre à gauche, filtre à droite
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+
+    .search-bar-content {
+      flex: 1;          // occupe tout l'espace disponible
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .bar {
+        width: 100%;    // prend toute la largeur de la barre
+        height: 56px;
+      }
+
+      .icon-search {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .filter {
+      flex-shrink: 0;  // le bouton garde sa taille
+      margin-left: 0;  // supprime tout décalage
+    }
+  }
 }

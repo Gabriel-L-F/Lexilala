@@ -1,10 +1,53 @@
 @use '../abstracts' as *;
 
-main {
-    margin:200px;
+@media (max-width: 768px) {
+.main {
+    padding: 15px;
+    font-size: 14px;
 }
-.logo {
 
+
+.logo-dulala {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    .intro{
+        width: 100%;
+    }
+
+    .logo{
+        max-width: 150px;
+    }
+}
+
+.logo-parteners{
+    display: flex;
+    align-items: flex-start;
+    max-width: 100px;
+    width: 100%;
+    gap: 10px;
+}
+
+.logo-thanks {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;       
+    align-items: flex-start;
+    justify-content: flex-start;
+    justify-content: center;
+    max-width: 100%; 
+
+    .logo {
+        flex: 1 1 30%;
+        max-width: 100px;   
+    }
+}
+}
+@media (min-width: 768px) {
+
+.main {
+    padding: 200px;
 }
 
 .logo-dulala {
@@ -24,4 +67,5 @@ main {
     align-items: flex-start;
     max-width: 250px;
     margin-top: 5%;
+}
 }

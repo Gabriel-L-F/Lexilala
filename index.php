@@ -11,12 +11,12 @@
 
 get_header();
 ?>
-<main>
+
 	<div class="search-wrapper">
 		<h1 class="search-title title">Trouvez facilement les mots pour mieux se comprendre</h1>
 		<div class="search-bar">
 			<div class="search-bar-content">
-				<input type="text" placeholder="Rechercher">
+				<input class="bar" type="text" placeholder="Rechercher">
 				<button  class="icon-search">
 					<img class="loupe-recherche" src="<?php echo get_template_directory_uri(); ?>/image/loupe-recherche.png" alt="Logo Lexilala">
 				</button>
@@ -44,7 +44,7 @@ get_header();
 		<h2 class="title">Des nouveaux mots ?</h2>
 		<p class="description"> <b>Vous ne trouvez pas un mot ?</b> <br><br>Proposez-en un nouveau et contribuez à enrichir LexiLaLa avec des mots utiles au quotidien scolaire, pensés par et pour la communauté éducative.</p>
 	</div>
-	<form class="add-word">
+	<form class="add-word block">
 		<h3 class="form-title">Ajout de mot</h3>
 		<div class="in-row">
 		<label class="language-peaker">Langue</label>
@@ -53,7 +53,7 @@ get_header();
 		</select>
 		</div>
 		<label>Ecrivez le mot que vous souhaitez ajouter</label>
-		<input type="text" id="input-text" name="mot">
+		<input class="insert_word" type="text" id="input-text" name="mot">
 		<label>Ecrivez la définition</label>
 		<input type="text" id="input-text" name="description">
 		<div class="in-row">
@@ -62,10 +62,10 @@ get_header();
 		</div>
 		<button class="send">Envoyer</button>
 	</form>
-	<div class="soutient">
+	<div class="soutient block">
 		<p class="greetings">J’utilise vos ressources, j’apprécie votre travail, je vous soutiens !</p>
 		<button class="subscribe">Nous soutenir</button>
 	</div>
-</main>
+
 <?php
 get_footer();

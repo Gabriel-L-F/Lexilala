@@ -21,41 +21,44 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#main-content">
-		<?php esc_html_e( 'Skip to content', 'wp-b2' ); ?>
-	</a>
 
-	<header id="masthead" class="site-header">
-		<div class="container">
-			<div class="site-branding">
-				<div class="logo_header" href="http://masterclass-wordpress.local/about/">
-					<a href="http://lexilala.com">
-						<img src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
-					</a>
-				</div>
-				<div class="nav-bar">
-					<li><a href="#">Les mots de l'école</a></li>
-					<li><a href="http://lexilala.com/about/">Qui sommes-nous ?</a></li>
-					<li><a href="#">Mode d'emploi</a></li>
-					<li><a href="#">Ressources</a></li>
-					<li class="dropdown">
-				</div>
+<header id="masthead" class="site-header">
+	<div class="container">
+		<div class="site-branding">
+			
+			<div class="burger">
+			<span></span>
+			<span></span>
+			<span></span>
+			</div>
+
+			<div class="logo_header">
+			<a href="http://lexilala.com">
+				<img class="logo"src="<?php echo get_template_directory_uri(); ?>/image/logo_header.png" alt="Logo Lexilala">
+			</a>
+			</div>
+
+			<ul class="nav-bar">
+			<li><a href="#">Les mots de l'école</a></li>
+			<li><a href="http://lexilala.com/about/">Qui sommes-nous ?</a></li>
+			<li><a href="#">Mode d'emploi</a></li>
+			<li><a href="#">Ressources</a></li>
+			<li class="dropdown">
 				<select class="lang-select" name="lang-select" id="lang-select">
-						<option value="fr" selected>Français</option>
-						<option value="en">Anglais</option>
-						<option value="es">Espagnol</option>
-						<option value="de">Allemand</option>
+				<option value="fr" selected>Français</option>
+				<option value="en">Anglais</option>
+				<option value="es">Espagnol</option>
+				<option value="de">Allemand</option>
 				</select>
-            </li>
-        </ul>
-			</div><!-- .site-branding -->
+			</li>
+			</ul>
+		</div>
+	</div>
+
+
 
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-					<span class="menu-toggle-icon"></span>
-					<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'wp-b2' ); ?></span>
-				</button>
+
 				<?php
 				wp_nav_menu(
 					array(

@@ -17,12 +17,12 @@ get_header();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body <?php body_class('about-page'); ?>>
-    <main>   
+<body class="body"<?php body_class('about-page'); ?>>
+    <div class="main"> 
     <h1 class="title">Qui sommes-nous ?</h1>
     <div class="logo-dulala">
-    <p class="intro">Ce projet est développé par l’association Dulala, un laboratoire national de ressources et formations pour l’éducation plurilingue et interculturelle.</p>
-    <img class="logo" src="<?php echo get_template_directory_uri(); ?>/image/logo_dulala.png" alt="Logo Dulala">
+        <p class="intro">Ce projet est développé par l’association Dulala, un laboratoire national de ressources et formations pour l’éducation plurilingue et interculturelle.</p>
+        <img class="logo" src="<?php echo get_template_directory_uri(); ?>/image/logo_dulala.png" alt="Logo Dulala">
     </div>
     <p class="parteners">Lexilala existe et s’enrichit grâce aux contributions précieuses de plusieurs partenaires : le CASNAV de Paris, la FCPE de la ville de Montreuil, l’association Fable-Lab, l’institut de recherche dix—milliards—humains, l’école des langues Jakinola, l’association AES, les nombreux acteurs des « Cités éducatives » en France, les éditions Syros, l’association Entre & Avec, l’école Thot… <br> <br> Un grand merci au laboratoire Icar et au Labex ASLAN, par l’intermédiaire du séminaire ELSE « Rencontres entre acteurs du bi-plurilinguisme », qui soutiennent le projet Lexilala.</p>
     <div class="logo-parteners">
@@ -52,7 +52,7 @@ get_header();
     <img class="logo" src="<?php echo get_template_directory_uri(); ?>/image/logo_fondation_pierre_bellon.png" alt="Logo fondation pierre bellon">
     <img class="logo" src="<?php echo get_template_directory_uri(); ?>/image/logo_carasso.png" alt="Logo carasso">
     </div>
-    </main>
+    </div>
 </body>
 </html>
 <?php
