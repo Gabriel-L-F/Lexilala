@@ -158,3 +158,26 @@ function lexilala_enqueue_scripts() {
     );
 }
 add_action('wp_enqueue_scripts', 'lexilala_enqueue_scripts');
+
+function lexilala_add_word_script() {
+    $js_path = get_template_directory() . '/assets/js/add-word.js';
+
+    wp_enqueue_script(
+        'lexilala-add-word',
+        get_template_directory_uri() . '/assets/js/add-word.js',
+        array(), // ou ['jquery'] si besoin
+        file_exists($js_path) ? filemtime($js_path) : WP_B2_VERSION,
+        true
+    );
+
+    // Passer ajaxUrl et nonce
+    wp_localize_script(
+        'lexilala-add-word',
+        'wpB2',
+        array(
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonce'   => wp_create_nonce('lexilala_add_word_nonce')
+        )
+    );
+}
+add_action('wp_enqueue_scripts', 'lexilala_add_word_script');

@@ -44,28 +44,76 @@ get_header();
 		<h2 class="title">Des nouveaux mots ?</h2>
 		<p class="description"> <b>Vous ne trouvez pas un mot ?</b> <br><br>Proposez-en un nouveau et contribuez à enrichir LexiLaLa avec des mots utiles au quotidien scolaire, pensés par et pour la communauté éducative.</p>
 	</div>
-	<form class="add-word block">
-		<h3 class="form-title">Ajout de mot</h3>
-		<div class="in-row">
-		<label class="language-peaker">Langue</label>
-		<select name="langue" id="langue">
-			<option value="">Choisir la langue</option>
-		</select>
-		</div>
-		<label>Ecrivez le mot que vous souhaitez ajouter</label>
-		<input class="insert_word" type="text" id="input-text" name="mot">
-		<label>Ecrivez la définition</label>
-		<input type="text" id="input-text" name="description">
-		<div class="in-row">
-		<input class="checkbox" type="checkbox" required>
-		<p class="condition">Acceptez les conditions d'ajout de ce mot</p>
-		</div>
-		<button class="send">Envoyer</button>
-	</form>
+	
+	<form class="add-word block" method="post" action="">
+    <h3 class="form-title">Ajout de mot</h3>
+
+    <input type="hidden" name="send_word_form" value="1">
+
+    <div class="in-row">
+        <label class="language-peaker">Langue</label>
+        <select name="langue" required>
+            <option value="">Choisir la langue</option>
+            <option value="français">Français</option>
+            <option value="anglais">Anglais</option>
+        </select>
+    </div>
+
+    <label>Écrivez le mot que vous souhaitez ajouter</label>
+    <input class="insert_word" type="text" name="mot" required>
+
+    <label>Écrivez la définition</label>
+    <input type="text" name="description" required>
+
+    <div class="in-row">
+        <input class="checkbox" type="checkbox" name="conditions" required>
+        <p class="condition">Acceptez les conditions d'ajout de ce mot</p>
+    </div>
+
+    <button class="send" type="submit">Envoyer</button>
+</form>
+
+
+
 	<div class="soutient block">
 		<p class="greetings">J’utilise vos ressources, j’apprécie votre travail, je vous soutiens !</p>
 		<button class="subscribe">Nous soutenir</button>
 	</div>
 
 <?php
+
+
+if ( isset($_POST['send_word_form']) && $_POST['send_word_form'] == 1 ) {
+
+   
+    $langue      = sanitize_text_field($_POST['langue']);
+    $mot         = sanitize_text_field($_POST['mot']);
+    $description = sanitize_textarea_field($_POST['description']);
+
+    if ( !isset($_POST['conditions']) ) {
+        echo "<p style='color:red;'>Vous devez accepter les conditions.</p>";
+    } else {
+        global $wpdb;
+        $table_name =  'lx_conseiller';
+
+        $data = array(
+            'langue'      => $langue,
+            'mot'         => $mot,
+            'description' => $description,
+            'date_ajout'  => current_time('mysql')
+        );
+
+        $format = array('%s','%s','%s','%s');
+
+        $wpdb->insert($table_name, $data, $format);
+
+      if ( $wpdb->insert_id ) {
+    echo "<p style='color:green;'>Mot ajouté avec succès ! ID = " . $wpdb->insert_id . "</p>";
+} else {
+    echo "<p style='color:red;'>Erreur lors de l'ajout du mot.</p>";
+    echo "<p>Erreur MySQL : " . $wpdb->last_error . "</p>";
+}
+    }
+}
+
 get_footer();
