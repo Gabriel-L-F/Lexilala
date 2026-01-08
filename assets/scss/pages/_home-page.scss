@@ -1,32 +1,300 @@
-
 @use '../abstracts' as *;
 
+@media (max-width: 768px) {
 .search-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; // centre horizontalement
-  gap: 2rem;
-  background-color: aqua;
+  margin-top:2%;
+  @include flex(column, center, center, 2rem);
+
+  .search-title {
+    width: 70%;
+    font-weight: 700;
+    font-size: 300%;
+    display: none;
+  }
+
+  .search-bar {
+    @include flex(column, flex-start, center);
+    margin-bottom: 49px;
+    width: 90%;
+    gap:30px;
+
+    .search-bar-content {
+      position: relative;
+      width: 100%;
+      height: 45px;
+
+      .bar{
+        height: 45px;
+      }
+
+      .icon-search {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        background: transparent;
+        border: none;
+        justify-content: flex-end;
+        display: flex;
+
+        .loupe-recherche {
+          width: 40%;
+        }
+      }
+    }
+
+    .search-bar-content input {
+      @include pill(#e0e0e0);
+      width: 100%;
+      font-size: 16px;
+
+      &::placeholder {
+        color: #777;
+      }
+    }
+
+    .filter {
+      @include circle(56px, #D9D9D9);
+      margin-left: 5%;
+    }
+  }
 }
 
-.search-bar {
-  width: 60%;
-  max-width: 800px;
-  height: 56px;
-  gap: Opx;
+.info {
+  @include flex(row, center, center);
+  width: 100%;
+  background-color: #F5F5F5;
 
-  display: flex;
-  align-items: center;
-
-  background: #e0e0e0;
-  border-radius: 999px;
-  padding: 0 1.5rem;
+  .info-content {
+    width: 100%;
+    margin: 18px;
+    font-size: 14px;
+  }
 }
 
-.search-bar input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 1rem;
+.ilustration {
+  @include flex(row, center, center);
+
+  .ilustration-image {
+    @include size(361px, 218px);
+    margin: 40px;
+  }
+}
+
+.form-head {
+  margin: 15px;
+  
+
+  .title{
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+.block {
+    margin: 16px;
+  @include card(color('primary'), 15px, 0 133px 0 89px);
+  height: 431px;
+  @include flex(column, space-between, stretch);
+  color: white;
+  font-size: 14px;
+  padding: 23px;
+}
+.add-word {
+
+
+  .form-title {
+    align-self: center;
+    font-size: 16px;
+    color: white;
+  
+  }
+
+  .in-row {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    
+    .language-peaker {
+      width: 217px;
+    }
+
+    .checkbox {
+      transform: scale(3);
+      border-radius: 10%;
+      border: none;
+    }
+
+    .condition {
+        margin:0 0 0 52px;
+    }
+  }
+
+  .send {
+    @include button-form;
+  }
+
+}
+
+.soutient {
+  height: 214px;
+  display: flex;
+  justify-content: center;
+
+  .greetings {
+    align-self: center;
+  }
+
+  .subscribe {
+    @include button-form;
+  }
+}
+}
+/* ==================================================
+   DESKTOP : affichage du titre
+================================================== */
+
+@media (min-width: 768px) {
+
+ 
+.search-wrapper {
+  margin-top:2%;
+  @include flex(column, center, center, 2rem);
+
+  .search-title {
+    width: 775px;
+    font-weight: 700;
+    font-size: 50px;
+  }
+
+  .search-bar {
+    @include flex(row, flex-start, center);
+    margin-bottom: 108px;
+
+    .search-bar-content {
+      position: relative;
+      width: 863px;
+
+      .icon-search {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        background: transparent;
+        border: none;
+
+        .loupe-recherche {
+          @include size(41px, auto);
+        }
+      }
+    }
+
+    .search-bar-content input {
+      @include pill(#e0e0e0);
+      width: 863px;
+      font-size: 16px;
+
+      &::placeholder {
+        color: #777;
+      }
+    }
+
+    .filter {
+      @include circle(56px, #D9D9D9);
+      margin-left: 29px;
+    }
+  }
+}
+
+.info {
+  @include flex(row, center, center);
+  width: 100%;
+  background-color: #F5F5F5;
+
+  .info-content {
+    width: 100%;
+    margin: 40px;
+    font-size: 20px;
+  }
+}
+
+.ilustration {
+  @include flex(row, center, center);
+
+  .ilustration-image {
+    @include size(864px, 435px);
+    margin: 40px;
+  }
+}
+
+.form-head {
+  margin: 107px 15% 38px 15%;
+  @include flex(row, flex-start, stretch, 35px);
+
+  .description {
+    width: 686px;
+  }
+}
+
+.add-word {
+  margin: 0 15%;
+  @include card(color('primary'), 15px, 0 133px 0 89px);
+  height: 685px;
+  @include flex(column, space-between, stretch);
+  color: white;
+
+  .form-title {
+    align-self: center;
+    font-size: 36px;
+    color: white;
+    margin-top: 23px;
+  }
+
+  .in-row {
+    @include flex(row, flex-start, center);
+
+    .language-peaker {
+      margin-right: 78px;
+    }
+
+    .condition {
+      margin-left: 37px;
+      padding-top: 7px;
+      align-self: center;
+      justify-content: center;
+    }
+
+    .checkbox {
+      margin-left: 25px;
+      transform: scale(4);
+      border-radius: 10%;
+      border: none;
+    }
+  }
+
+  .send {
+    margin: 7% 0 44px 0;
+    @include button-form;
+  }
+
+}
+
+.soutient {
+  margin: 100px 15%;
+  @include card(color('primary'), 15px, 63px 133px 63px 89px);
+  @include flex(column, space-between, stretch);
+  height: 244px;
+  color: color('white');
+
+  .greetings {
+    align-self: center;
+  }
+
+  .subscribe {
+    @include button-form;
+  }
+}
 }
